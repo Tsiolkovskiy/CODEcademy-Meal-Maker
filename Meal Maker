@@ -1,0 +1,29 @@
+const menu ={
+  _meal: '',
+  _price: 0,
+  set meal(mealToCheck){
+    if (typeof mealToCheck==='string') {
+    this._meal=mealToCheck;
+    }else {
+      console.log('Invalid price input. It must be a number.');
+    }
+  },
+  set price(priceToCheck){
+    if(typeof priceToCheck==='number') {
+      this.price=priceToCheck;
+    }else {
+      console.log('Invalid price input. It must be a number.');
+    }
+  },
+  get todaysSpecial(){
+    if (this._meal && this._price) {
+      return `Todays Special is ${this._meal} for ${this._price}!`;
+    }
+      else {
+        return "Meal or price was not set correctly!";
+      }
+  }
+};
+menu._meal='Pizza';
+menu._price=10;
+console.log(menu);
